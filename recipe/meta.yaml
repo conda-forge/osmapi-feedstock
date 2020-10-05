@@ -11,13 +11,12 @@ source:
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - python
     - pip
-    - requests
   run:
     - python
     - requests
@@ -25,11 +24,15 @@ requirements:
 test:
   imports:
     - osmapi
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/metaodi/osmapi
-  license: GPL 3.0
-  license_file: {{ environ["RECIPE_DIR"] }}/LICENSE.txt
+  license: GPL-3.0-only
+  license_file: LICENSE.txt
   summary: Python wrapper for the OSM API
 
 extra:
