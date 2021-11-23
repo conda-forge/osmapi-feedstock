@@ -1,11 +1,13 @@
+{% set name = "osmapi" %}
 {% set version = "2.0.0" %}
 
+
 package:
-  name: osmapi
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/o/osmapi/osmapi-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/osmapi-{{ version }}.tar.gz
   sha256: bb2242d9c540a2ef1e7a9ddfaf6d3d0be7731af6657b6848df905179a9f51965
 
 build:
@@ -15,10 +17,12 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
+    # - pypandoc
+    # - unidecode
   run:
-    - python
+    - python >=3.6
     - requests
 
 test:
