@@ -1,5 +1,5 @@
 {% set name = "osmapi" %}
-{% set version = "3.0.0" %}
+{% set version = "3.1.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/osmapi-{{ version }}.tar.gz
-  sha256: 91dd9a11575c50f0012b3654a097c7c07209f5b3020c12d8b0ef68f81266464c
+  sha256: 7f2a16dd956e64e37b8307817e58f53fe5e5198342247b897c78c8cd67de86e1
 
 build:
   number: 0
